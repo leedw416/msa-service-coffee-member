@@ -1,0 +1,30 @@
+server:
+  port: 4000
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+
+spring:
+  application:
+    name: msa-service-coffee-member
+  dataSource:
+    url: jdbc:mariadb://localhost:3306/dongwoo
+    driverClassName: org.mariadb.jdbc.Driver
+    username: root
+    password: ekffur1!
+  jpa:
+    database-platfrom: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      show-sql: true
+
+#config Sever
+cloud:
+  config:
+    uri: http://localhost:8888
+    name: msa-architecture-config-server
+
+#Eureka Client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/
